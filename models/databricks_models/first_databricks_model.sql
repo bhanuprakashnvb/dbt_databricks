@@ -1,0 +1,1 @@
+select 1, current_date(),current_catalog(), current_schema(), current_database(), current_user(), current_timestamp()
