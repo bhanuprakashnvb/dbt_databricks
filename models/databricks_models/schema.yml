@@ -1,0 +1,32 @@
+
+version: 2
+
+sources:
+  - name: dbt_target_databricks_db
+    description: 'Models from this folder will be created under this database'
+    database: dbt_target_db
+    schema: databricks_models
+    tables: 
+      - name: dbt_data_location
+        description: Table contains db and schema details used by dbt
+      - name: first_databricks_model
+        description: Replica Table contains db and schema details used by dbt
+
+# models:
+#     - name: my_first_dbt_model
+#       description: "A starter dbt model"
+#       columns:
+#           - name: id
+#             description: "The primary key for this table"
+#             tests:
+#                 - unique
+#                 - not_null
+
+#     - name: my_second_dbt_model
+#       description: "A starter dbt model"
+#       columns:
+#           - name: id
+#             description: "The primary key for this table"
+#             tests:
+#                 - unique
+#                 - not_null
