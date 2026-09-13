@@ -6,11 +6,33 @@ sources:
     description: 'Models from this folder will be created under this database'
     database: dbt_target_db
     schema: databricks_models
+    
     tables: 
       - name: dbt_data_location
         description: Table contains db and schema details used by dbt
+        columns:
+          - name: current_date_val
+          - name: current_catalog_val
+          - name: current_schema_val
+          - name: current_user_val
+          - name: current_timestamp_val
+
       - name: first_databricks_model
         description: Replica Table contains db and schema details used by dbt
+        
+      - name: audit_log
+        description: Table to Log model/dbt runs
+        config:
+          freshness:
+            warn_after: {count: 1, period: minute}
+            error_after: {count: 5, period: minute}
+        loaded_at_field: ran_at
+        columns:
+          - name: id
+          - name: action_type
+          - name: ran_at
+
+
 
 # models:
 #     - name: my_first_dbt_model
