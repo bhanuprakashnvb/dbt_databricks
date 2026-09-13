@@ -1,3 +1,5 @@
+{{ config( query_tag = 'dbt_tag_teams') }}
+
 select 'Lakers' as team
 union all
 select 'Warriors' as team
