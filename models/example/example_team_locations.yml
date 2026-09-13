@@ -1,0 +1,19 @@
+version: 2
+
+models:
+    - name: example_team_locations
+      description: >
+        A lost of a few NBA teams that made the Playoffs in 2020
+    
+      columns:
+        - name: Team
+          description: "Name of the team."
+        
+        - name: City
+          description: "The home city of the team."
+        
+        - name: State
+          description: "The home state of the team."
+          tests:
+            - is_ca_team
+    
