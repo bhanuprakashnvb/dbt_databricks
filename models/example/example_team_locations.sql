@@ -21,5 +21,5 @@ final as(
         on team_locations.name =teams.team
 )
  
-select * from final
+select *, '{{ invocation_id }}' as invocation_id from final
 
