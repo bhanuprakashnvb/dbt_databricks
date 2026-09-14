@@ -6,6 +6,8 @@ models:
       description: "A starter dbt model"
       columns:
           - name: id
+            tags: 
+               - test_tag
             description: "The primary key for this table"
             tests:
                 - unique

@@ -41,11 +41,16 @@ models:
     # Applies to all files under models/example/
     example:
       +materialized: table
+      +tags: example_folder_tag
       
     databricks_models:
       +materialized: table
       +schema: databricks_models
-
+      +tags: dbt_infra_tag
+    
+    +tags:
+        - project_level_tag
+# to run models under this directory --> dbt run -s tag:dbt_databricks_tag
 
 # Configuring models
 # Full documentation: https://docs.getdbt.com/docs/configuring-models
